@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initia-scale=1.0">
     <title>Constrained Text - CompText F25</title>
     <meta name="description" content="Constrained text project with hyperlinked words">
     <link rel="stylesheet" href="styles.css">
@@ -60,6 +60,36 @@
             color: #ff4444;
             margin-bottom: 0.5rem;
         }
+        
+        /* Semantic highlighting styles */
+        .latin-word {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .latin-word:hover {
+            background-color: #ff4444;
+            color: white;
+        }
+        
+        .english-word {
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight {
+            background-color: #ffe6e6;
+            font-weight: bold;
+        }
+        
+        .hover-highlight {
+            background-color: #ff4444;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -78,67 +108,29 @@
             <div class="text-content">
                 <p id="p1">
                     <h3>Catullus 85</h3>
-                    Odi et amo. Quare id faciam, fortasse requiris? <br>
-                    Nescio, sed fierei sentio et excrucior.
-                    <a href="#p2" class="hyperlink-odi">constrained</a>
+                    <span class="latin-word" data-word="odi">Odi</span> <span class="latin-word" data-word="et">et</span> <span class="latin-word" data-word="amo">amo</span>. <span class="latin-word" data-word="quare">Quare</span> id faciam, <span class="latin-word" data-word="fortasse">fortasse</span> <span class="latin-word" data-word="requiris">requiris</span>? <br>
+                    <span class="latin-word" data-word="nescio">Nescio</span>, <span class="latin-word" data-word="sed">sed</span> <span class="latin-word" data-word="fierei">fierei</span> <span class="latin-word" data-word="sentio">sentio</span> <span class="latin-word" data-word="et">et</span> <span class="latin-word" data-word="excrucior">excrucior</span>.
                 </p>
                 <br></br>
                 <p id="p2">
                     <h3>Ezra Pound</h3>
-                   I hate and I love. Why? You may ask but <br>
-                   It beats me. I feel it done to me, and ache.
-                    <a href="#p1" class="hyperlink-word">important</a>
+                   I <span class="english-word" data-word="odi">hate</span> <span class="english-word" data-word="et">and</span> I <span class="english-word" data-word="amo">love</span>. <span class="english-word" data-word="quare">Why</span>? You <span class="english-word" data-word="fortasse">may</span> <span class="english-word" data-word="requiris">ask</span> but <br>
+                   <span class="english-word" data-word="nescio">It beats me</span>. I <span class="english-word" data-word="sentio">feel</span> it <span class="english-word" data-word="fierei">done to</span> me, <span class="english-word" data-word="et">and</span> <span class="english-word" data-word="excrucior">ache</span>.
                 </p>
                  <br></br>
-                <p id="p2">
-                    <h3>Cid Cornan</h3>
-                   Hate: and I love. Why? Who knows why? <br>
-                   Nothing I say chokes the ache.
-                    <a href="#p1" class="hyperlink-word">important</a>
+                <p id="p3">
+                    <h3>Cid Corman</h3>
+                   <span class="english-word" data-word="odi">Hate</span>: <span class="english-word" data-word="et">and</span> I <span class="english-word" data-word="amo">love</span>. <span class="english-word" data-word="quare">Why</span>? <span class="english-word" data-word="nescio">Who knows</span> <span class="english-word" data-word="quare">why</span>? <br>
+                   Nothing I say chokes the <span class="english-word" data-word="excrucior">ache</span>.
                 </p>
                  <br></br>
-                <p id="p2">
+                <p id="p4">
                     <h3>Olivia Lee</h3>
-                    My hate is love, and you might wonder why.<br>
-                    I don't know, but I feel it happening and I’m crucified.
-                    <a href="#p1" class="hyperlink-word">important</a>
+                    My <span class="english-word" data-word="odi">hate</span> is <span class="english-word" data-word="amo">love</span>, <span class="english-word" data-word="et">and</span> you <span class="english-word" data-word="fortasse">might</span> <span class="english-word" data-word="requiris">wonder</span> <span class="english-word" data-word="quare">why</span>.<br>
+                    <span class="english-word" data-word="nescio">I don't know</span>, <span class="english-word" data-word="sed">but</span> I <span class="english-word" data-word="sentio">feel</span> it <span class="english-word" data-word="fierei">happening</span> <span class="english-word" data-word="et">and</span> I'm <span class="english-word" data-word="excrucior">crucified</span>.
                 </p>
             </div>
         </section>
-
-        <!-- <section id="definitions">
-            <h2>Definitions & Explanations</h2>
-            
-            <div id="word1" class="target-section">
-                <h3>Constrained</h3>
-                <p>Definition or explanation of the word "constrained" goes here.</p>
-            </div>
-            
-            <div id="word2" class="target-section">
-                <h3>Words</h3>
-                <p>Definition or explanation of the word "words" goes here.</p>
-            </div>
-            
-            <div id="word3" class="target-section">
-                <h3>Customize</h3>
-                <p>Definition or explanation of the word "customize" goes here.</p>
-            </div>
-            
-            <div id="word4" class="target-section">
-                <h3>Hyperlinks</h3>
-                <p>Definition or explanation of the word "hyperlinks" goes here.</p>
-            </div>
-            
-            <div id="word5" class="target-section">
-                <h3>Important</h3>
-                <p>Definition or explanation of the word "important" goes here.</p>
-            </div>
-            
-            <div id="word6" class="target-section">
-                <h3>Interesting</h3>
-                <p>Definition or explanation of the word "interesting" goes here.</p>
-            </div>
-        </section> -->
  </main> 
 
   <footer>
@@ -149,23 +141,76 @@
     </footer>
 
     <script>
-        // Smooth scrolling for hyperlinks
-        document.querySelectorAll('.hyperlink-word').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        // Semantic highlighting for Latin-English word connections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all Latin words
+            const latinWords = document.querySelectorAll('.latin-word');
+            
+            latinWords.forEach(latinWord => {
+                const wordType = latinWord.getAttribute('data-word');
+                
+                latinWord.addEventListener('mouseenter', function() {
+                    // Highlight this Latin word
+                    this.classList.add('hover-highlight');
+                    
+                    // Find and highlight all corresponding English words
+                    const englishWords = document.querySelectorAll(`.english-word[data-word="${wordType}"]`);
+                    englishWords.forEach(englishWord => {
+                        englishWord.classList.add('hover-highlight');
                     });
-                    // Add a brief highlight effect
-                    targetElement.style.backgroundColor = '#ffe6e6';
-                    setTimeout(() => {
-                        targetElement.style.backgroundColor = '#f8f8f8';
-                    }, 1000);
-                }
+                });
+                
+                latinWord.addEventListener('mouseleave', function() {
+                    // Remove highlight from this Latin word
+                    this.classList.remove('hover-highlight');
+                    
+                    // Remove highlight from all corresponding English words
+                    const englishWords = document.querySelectorAll(`.english-word[data-word="${wordType}"]`);
+                    englishWords.forEach(englishWord => {
+                        englishWord.classList.remove('hover-highlight');
+                    });
+                });
+            });
+            
+            // Also add hover functionality to English words
+            const englishWords = document.querySelectorAll('.english-word');
+            
+            englishWords.forEach(englishWord => {
+                const wordType = englishWord.getAttribute('data-word');
+                
+                englishWord.addEventListener('mouseenter', function() {
+                    // Highlight this English word
+                    this.classList.add('hover-highlight');
+                    
+                    // Find and highlight the corresponding Latin word
+                    const latinWord = document.querySelector(`.latin-word[data-word="${wordType}"]`);
+                    if (latinWord) {
+                        latinWord.classList.add('hover-highlight');
+                    }
+                    
+                    // Highlight all other English translations of the same word
+                    const otherEnglishWords = document.querySelectorAll(`.english-word[data-word="${wordType}"]`);
+                    otherEnglishWords.forEach(otherWord => {
+                        otherWord.classList.add('hover-highlight');
+                    });
+                });
+                
+                englishWord.addEventListener('mouseleave', function() {
+                    // Remove highlight from this English word
+                    this.classList.remove('hover-highlight');
+                    
+                    // Remove highlight from the corresponding Latin word
+                    const latinWord = document.querySelector(`.latin-word[data-word="${wordType}"]`);
+                    if (latinWord) {
+                        latinWord.classList.remove('hover-highlight');
+                    }
+                    
+                    // Remove highlight from all other English translations
+                    const otherEnglishWords = document.querySelectorAll(`.english-word[data-word="${wordType}"]`);
+                    otherEnglishWords.forEach(otherWord => {
+                        otherWord.classList.remove('hover-highlight');
+                    });
+                });
             });
         });
     </script>
