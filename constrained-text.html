@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constrained Text - CompText F25</title>
+    <meta name="description" content="Constrained text project with hyperlinked words">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for constrained text page */
+        .text-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .hyperlink-word {
+            color: #ff4444;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .hyperlink-word:hover {
+            background-color: #ff4444;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #ff4444;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ff4444;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background-color: #ff4444;
+            color: white;
+        }
+        
+        /* Target sections for hyperlinks */
+        .target-section {
+            padding: 1rem;
+            margin: 2rem 0;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            border-left: 4px solid #ff4444;
+        }
+        
+        .target-section h3 {
+            color: #ff4444;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Constrained Text</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+       
+
+    <main>
+        <section id="text">
+            <div class="text-content">
+                <p id="p1">
+                    <h3>Catullus 85</h3>
+                    Odi et amo. Quare id faciam, fortasse requiris? <br>
+                    Nescio, sed fierei sentio et excrucior.
+                    <a href="#p2" class="hyperlink-odi">constrained</a>
+                </p>
+                <br></br>
+                <p id="p2">
+                    <h3>Ezra Pound</h3>
+                   I hate and I love. Why? You may ask but <br>
+                   It beats me. I feel it done to me, and ache.
+                    <a href="#p1" class="hyperlink-word">important</a>
+                </p>
+                 <br></br>
+                <p id="p2">
+                    <h3>Cid Cornan</h3>
+                   Hate: and I love. Why? Who knows why? <br>
+                   Nothing I say chokes the ache.
+                    <a href="#p1" class="hyperlink-word">important</a>
+                </p>
+                 <br></br>
+                <p id="p2">
+                    <h3>Olivia Lee</h3>
+                    My hate is love, and you might wonder why.<br>
+                    I don't know, but I feel it happening and I’m crucified.
+                    <a href="#p1" class="hyperlink-word">important</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- <section id="definitions">
+            <h2>Definitions & Explanations</h2>
+            
+            <div id="word1" class="target-section">
+                <h3>Constrained</h3>
+                <p>Definition or explanation of the word "constrained" goes here.</p>
+            </div>
+            
+            <div id="word2" class="target-section">
+                <h3>Words</h3>
+                <p>Definition or explanation of the word "words" goes here.</p>
+            </div>
+            
+            <div id="word3" class="target-section">
+                <h3>Customize</h3>
+                <p>Definition or explanation of the word "customize" goes here.</p>
+            </div>
+            
+            <div id="word4" class="target-section">
+                <h3>Hyperlinks</h3>
+                <p>Definition or explanation of the word "hyperlinks" goes here.</p>
+            </div>
+            
+            <div id="word5" class="target-section">
+                <h3>Important</h3>
+                <p>Definition or explanation of the word "important" goes here.</p>
+            </div>
+            
+            <div id="word6" class="target-section">
+                <h3>Interesting</h3>
+                <p>Definition or explanation of the word "interesting" goes here.</p>
+            </div>
+        </section> -->
+ </main> 
+
+  <footer>
+        <p>&copy; 2025 Olivia Lee. All rights reserved.</p>
+        <ul>
+                <li>GitHub: <a href="https://github.com/olivia-em">@olivia-em</a></li>
+            </ul>
+    </footer>
+
+    <script>
+        // Smooth scrolling for hyperlinks
+        document.querySelectorAll('.hyperlink-word').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Add a brief highlight effect
+                    targetElement.style.backgroundColor = '#ffe6e6';
+                    setTimeout(() => {
+                        targetElement.style.backgroundColor = '#f8f8f8';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
